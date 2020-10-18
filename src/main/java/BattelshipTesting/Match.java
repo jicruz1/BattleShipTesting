@@ -12,17 +12,22 @@ public class Match {
 		return null;
 	}
 
-	public boolean isFinalJuego() {
+	public boolean isFinalGame() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	public boolean isTurnoJugador() {
+	public boolean isTurnPlayer() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public Object showWinner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object startMatch() {
 		// TODO Auto-generated method stub
 		return null;
 	}
