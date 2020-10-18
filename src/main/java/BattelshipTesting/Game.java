@@ -1,9 +1,9 @@
 package BattelshipTesting;
 
-public class Main {
+public class Game {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		new Menu();
 		System.out.println("Hello World Main");
 	}
 
