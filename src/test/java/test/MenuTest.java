@@ -12,20 +12,20 @@ public class MenuTest {
 	 * Test que devuelve el menu
 	 */
 	@Test
-	public void testEmpezarJuego() {
+	public void testStartGame() {
 
 		Menu testMenu = new Menu();
-		assertEquals(testMenu.mostrarMenu(), "------Menu Principal------");
+		assertEquals(testMenu.mostrarMenu(), "------Main Menu------");
 	}
 
 	/*
 	 * Test que devuelve la opcion del menu
 	 */
 	@Test
-	public void testGetOpcionJugar() {
+	public void testGetPlayOption() {
 
 		Menu testMenu = new Menu();
-		assertEquals(testMenu.getOpcion(), 1);
+		assertEquals(testMenu.getOption(), 1);
 
 	}
 	
@@ -33,10 +33,10 @@ public class MenuTest {
 	 * Test que devuelve la opcion del menu
 	 */
 	@Test
-	public void testGetOpcionSalir() {
+	public void testGetExitOption() {
 
 		Menu testMenu = new Menu();
-		assertEquals(testMenu.getOpcion(), 1);
+		assertEquals(testMenu.getOption(), 1);
 
 	}
 	
