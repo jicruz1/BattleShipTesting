@@ -2,7 +2,7 @@ package BattelshipTesting;
 
 public class Menu {
 
-	public void mostrarMenu() {
+	public void showMenu() {
 		System.out.print("------Menu Principal------\n");
 		System.out.print("1- Jugar\n");
 		System.out.print("3- Salir\n");
