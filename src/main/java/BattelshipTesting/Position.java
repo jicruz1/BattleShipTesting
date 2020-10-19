@@ -13,7 +13,7 @@ public class Position {
 
 	public void setOrientacion(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Object getX() {
@@ -28,12 +28,12 @@ public class Position {
 
 	public void setOrientation(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void setSize(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

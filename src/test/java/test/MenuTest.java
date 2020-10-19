@@ -1,7 +1,5 @@
 package test;
 
-
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -17,7 +15,8 @@ public class MenuTest {
 	public void testStartGame() {
 
 		Menu testMenu = new Menu();
-		//assertEquals(testMenu.showMenu(), "------Main Menu------");
+		// assertEquals(testMenu.showMenu(), "------Main Menu------");
+
 	}
 
 	/*
@@ -30,7 +29,7 @@ public class MenuTest {
 		assertEquals(testMenu.getOption(), 1);
 
 	}
-	
+
 	/*
 	 * Test que devuelve la opcion del menu
 	 */
@@ -41,7 +40,5 @@ public class MenuTest {
 		assertEquals(testMenu.getOption(), 1);
 
 	}
-	
+
 }
-
-

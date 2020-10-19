@@ -1,14 +1,10 @@
 package test;
 
-
 import static org.junit.Assert.assertEquals;
-
 
 import org.junit.Test;
 
 import BattelshipTesting.Position;
-
-
 
 /*
  * This class of test is in charge of the unit tests of the class Position
@@ -16,9 +12,8 @@ import BattelshipTesting.Position;
 public class PositionTest {
 
 	/*
-	 
-		*Black box test to ensure that the builder sets correctly the
-		*parameters
+	 * 
+	 * Black box test to ensure that the builder sets correctly the parameters
 	 */
 	@Test
 	public void testConstructor() {
@@ -28,8 +23,8 @@ public class PositionTest {
 	}
 
 	/*
-	 * getOrientationString method black box test equivalent partitions
-	 * (-inf, 0), [0, 3], [4, inf) frontera 0, 3 limit: -1, 1, 3, 4
+	 * getOrientationString method black box test equivalent partitions (-inf, 0),
+	 * [0, 3], [4, inf) frontera 0, 3 limit: -1, 1, 3, 4
 	 */
 	@Test
 	public void testOrientation() {
@@ -49,9 +44,9 @@ public class PositionTest {
 	}
 
 	/*
-		* Black box test of method position.toString () displayed by terminal
-		* the Position values. Equivalent partitions: (-inf, 0), [0, 3], [4,
-		* inf) boundary 0, 3 limits: -1, 1, 3, 4
+	 * Black box test of method position.toString () displayed by terminal the
+	 * Position values. Equivalent partitions: (-inf, 0), [0, 3], [4, inf) boundary
+	 * 0, 3 limits: -1, 1, 3, 4
 	 */
 	@Test
 	public void testPrintPosition() {
@@ -74,6 +69,5 @@ public class PositionTest {
 		position.setOrientacion(4);
 		assertEquals(position.toString(), "Position [x=1, y=1, orientation=No orientation]");
 	}
-
 
 }

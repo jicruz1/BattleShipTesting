@@ -6,14 +6,10 @@ public class Menu {
 		// TODO Auto-generated method stub
 	}
 
-
-
 	public Object getOption(int i) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 	public Object getOption() {
 		// TODO Auto-generated method stub

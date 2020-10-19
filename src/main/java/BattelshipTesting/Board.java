@@ -19,12 +19,12 @@ public class Board {
 
 	public void insertPosition(Position positionTest) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void insertPositionRandom(Position testPosition) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public int[][] crearBoard() {
@@ -56,8 +56,6 @@ public class Board {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 	public Object insertBoat() {
 		// TODO Auto-generated method stub

@@ -2,12 +2,12 @@ package BattelshipTesting;
 
 public class Match {
 
-	public Object getRandomIA() {
+	public Player getRandomIA() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getUserPlayer() {
+	public Player getUserPlayer() {
 		// TODO Auto-generated method stub
 		return null;
 	}

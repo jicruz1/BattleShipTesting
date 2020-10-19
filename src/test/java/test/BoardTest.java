@@ -1,7 +1,5 @@
 package test;
 
-
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -15,25 +13,19 @@ import org.junit.Test;
 import BattelshipTesting.Board;
 import BattelshipTesting.Position;
 
-
-
-
-
 /*
  * This test class takes care of the unit tests of the Board class
  */
 public class BoardTest {
-
-
 
 	/*
 	 * Test checks that a Dashboard is created correctly
 	 */
 	@Test
 	public void testCreateTablero() {
-		
+
 		Board boardTest = new Board();
-		assertEquals(boardTest.iniBoard(),"Board Started!");
+		assertEquals(boardTest.iniBoard(), "Board Started!");
 
 	}
 
@@ -44,7 +36,7 @@ public class BoardTest {
 	public void testShowBoard() {
 
 		Board boardTest = new Board();
-		assertEquals(boardTest.showBoard(),"Show Board!");
+		assertEquals(boardTest.showBoard(), "Show Board!");
 
 	}
 
@@ -54,7 +46,6 @@ public class BoardTest {
 	 */
 	@Test
 	public void testInsertPosition() {
-
 
 		Position positionTest = new Position(0, 0);
 		positionTest.setOrientation(0);
@@ -75,8 +66,6 @@ public class BoardTest {
 	@Test
 	public void testInsertPositionRandom() {
 
-		
-		
 		Random rn = new Random();
 		Board boardTest = new Board();
 		int x = rn.nextInt(10) + 1;
@@ -89,8 +78,7 @@ public class BoardTest {
 	}
 
 	/*
-	 * Test checks if you can insert from an orientation and the size of the
-	 * ship
+	 * Test checks if you can insert from an orientation and the size of the ship
 	 * 
 	 */
 	@Test
@@ -121,7 +109,7 @@ public class BoardTest {
 	public void testProtectionBoat() {
 
 		Board boardTest = new Board();
-		assertEquals(boardTest.protectionBoat(),"Protection Activated");
+		assertEquals(boardTest.protectionBoat(), "Protection Activated");
 
 	}
 
@@ -145,7 +133,6 @@ public class BoardTest {
 	@Test
 	public void testGenPosition() {
 
-
 		Board boardTest = new Board();
 		assertEquals(Position.class, boardTest.genPosition().getClass());
 		assertNotEquals(boardTest.genPosition(), boardTest.genPosition());
@@ -153,16 +140,14 @@ public class BoardTest {
 	}
 
 	/*
-     * Test insert a boat with its corresponding size. To simplify no
-     * We will find the orientation (Temporary) and we do not check the margins
+	 * Test insert a boat with its corresponding size. To simplify no We will find
+	 * the orientation (Temporary) and we do not check the margins
 	 */
 	@Test
 	public void testInsertBoart() {
-		
-		Board boardTest = new Board();
-		assertEquals(boardTest.insertBoat(),"Boat Inserted!");
-		
 
+		Board boardTest = new Board();
+		assertEquals(boardTest.insertBoat(), "Boat Inserted!");
 
 	}
 

@@ -1,3 +1,5 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -5,8 +7,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import BattelshipTesting.Match;
-
-
 
 /*
  * Esta clase de test se encarga de las pruebas unitarias de la clase Partida
@@ -21,8 +21,8 @@ public class MatchTest {
 	public void testCreateMatch() {
 
 		Match matchTest = new Match();
-		assertEquals("RandomIA", matchTest.getRandomIA().getNombre());
-		assertEquals("Player", matchTest.getUserPlayer().getNombre());
+		assertEquals("RandomIA", matchTest.getRandomIA().getName());
+		assertEquals("Player", matchTest.getUserPlayer().getName());
 		assertFalse(matchTest.isFinalGame());
 		assertTrue(matchTest.isTurnPlayer());
 	}
