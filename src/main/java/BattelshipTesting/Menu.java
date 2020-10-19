@@ -13,4 +13,11 @@ public class Menu {
 		return null;
 	}
 
+
+
+	public Object getOption() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

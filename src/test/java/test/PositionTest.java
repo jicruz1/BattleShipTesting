@@ -1,10 +1,14 @@
-package com.battelship.TDD;
+package test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.Assert.assertEquals;
+
 
 import org.junit.Test;
 
-import com.battelship.main.Position;
+import BattelshipTesting.Position;
+
+
 
 /*
  * This class of test is in charge of the unit tests of the class Position

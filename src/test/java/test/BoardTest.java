@@ -1,4 +1,6 @@
-package com.battelship.TDD;
+package test;
+
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -10,8 +12,10 @@ import java.util.Random;
 
 import org.junit.Test;
 
-import com.battelship.main.Position;
-import com.battelship.main.Board;
+import BattelshipTesting.Board;
+import BattelshipTesting.Position;
+
+
 
 
 
@@ -97,15 +101,15 @@ public class BoardTest {
 		positionTest.setSize(2);
 
 		Board boardTest = new Board();
-		assertTrue(boardTest.InserOrientation(positionTest));
+		assertTrue(boardTest.insertOrientation(positionTest));
 		positionTest.setOrientation(1);
-		assertTrue(boardTest.InserOrientation(positionTest));
+		assertTrue(boardTest.insertOrientation(positionTest));
 		positionTest.setOrientation(2);
-		assertTrue(boardTest.InserOrientation(positionTest));
+		assertTrue(boardTest.insertOrientation(positionTest));
 		positionTest.setOrientation(3);
-		assertTrue(boardTest.InserOrientation(positionTest));
+		assertTrue(boardTest.insertOrientation(positionTest));
 		positionTest.setOrientation(4);
-		assertNull(boardTest.InserOrientation(positionTest));
+		assertNull(boardTest.insertOrientation(positionTest));
 
 	}
 
@@ -116,7 +120,7 @@ public class BoardTest {
 	@Test
 	public void testProtectionBoat() {
 
-		Tablero boardTest = new Tablero();
+		Board boardTest = new Board();
 		assertEquals(boardTest.protectionBoat(),"Protection Activated");
 
 	}
@@ -130,7 +134,7 @@ public class BoardTest {
 
 		Board boardTest = new Board();
 		assertEquals(Position.class, boardTest.genOrientation().getClass());
-		assertNotEquals(boardTest.geneOrientation(), boardTest.genOrientation());
+		assertNotEquals(boardTest.genOrientation(), boardTest.genOrientation());
 
 	}
 
@@ -156,7 +160,7 @@ public class BoardTest {
 	public void testInsertBoart() {
 		
 		Board boardTest = new Board();
-		assertEquals(boardTest.inserBoat(),"Boat Inserted!");
+		assertEquals(boardTest.insertBoat(),"Boat Inserted!");
 		
 
 
