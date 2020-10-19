@@ -2,18 +2,24 @@ package BattelshipTesting;
 
 public class Menu {
 
-	public void showMenu() {
+	public String showMenu() {
 		// TODO Auto-generated method stub
+		return "------Main Menu------";
 	}
 
-	public Object getOption(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public String getOption(int option) {
 
-	public Object getOption() {
+		switch (option) {
 		// TODO Auto-generated method stub
-		return null;
+		case 1:
+			return "Starting Game";
+		case 2:
+			return "Exiting Game";
+		default:
+			break;
+		}
+		return "";
+
 	}
 
 }

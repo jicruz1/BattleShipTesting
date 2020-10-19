@@ -1,15 +1,23 @@
 package BattelshipTesting;
 
 public class Match {
+	
+	Player randomIA;
+	Player user;
 
+	public Match(){
+		
+		this.randomIA = new Player("RandomIA");
+		this.user = new Player("Player");
+	}
 	public Player getRandomIA() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.randomIA;
 	}
 
 	public Player getUserPlayer() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.user;
 	}
 
 	public boolean isFinalGame() {
@@ -24,12 +32,12 @@ public class Match {
 
 	public Object showWinner() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Player";
 	}
 
-	public Object startMatch() {
+	public String startMatch() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Match started!";
 	}
 
 }

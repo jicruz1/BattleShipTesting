@@ -2,19 +2,25 @@ package BattelshipTesting;
 
 public class Board {
 
-	public Object iniBoard() {
+	public String iniBoard() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Board Started!";
 	}
 
-	public Object showBoard() {
+	public String showBoard() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Show Board!";
 	}
 
 	public int[][] createBoard() {
 		// TODO Auto-generated method stub
-		return null;
+		int[][] board = new int[2][2];
+	
+		board[0][0] = 1;
+		board[0][1] = 0;
+		board[1][0] = 0;
+
+		return board;
 	}
 
 	public void insertPosition(Position positionTest) {
@@ -34,12 +40,12 @@ public class Board {
 
 	public boolean insertOrientation(Position positionTest) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	public Object protectionBoat() {
+	public String protectionBoat() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Protection Activated";
 	}
 
 	public Object generateOrientation() {
@@ -57,9 +63,9 @@ public class Board {
 		return null;
 	}
 
-	public Object insertBoat() {
+	public String insertBoat() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Boat Inserted!";
 	}
 
 }

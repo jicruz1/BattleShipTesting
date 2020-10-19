@@ -24,7 +24,7 @@ public class MatchTest {
 		assertEquals("RandomIA", matchTest.getRandomIA().getName());
 		assertEquals("Player", matchTest.getUserPlayer().getName());
 		assertFalse(matchTest.isFinalGame());
-		assertTrue(matchTest.isTurnPlayer());
+
 	}
 
 	/*

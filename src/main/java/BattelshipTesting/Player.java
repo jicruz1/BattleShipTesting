@@ -2,9 +2,16 @@ package BattelshipTesting;
 
 public class Player {
 
-	public Object getName() {
+	String name;
+	
+	public Player(String string) {
+		// TODO Auto-generated constructor stub
+		this.name= string;
+	}
+
+	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.name;
 	}
 
 }
