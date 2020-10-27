@@ -2,6 +2,9 @@ package BattelshipTesting;
 
 public class Board {
 
+	int numberBoats;
+	int[][] board;
+	
 	public String iniBoard() {
 		// TODO Auto-generated method stub
 		return "Board Started!";
@@ -67,5 +70,17 @@ public class Board {
 		// TODO Auto-generated method stub
 		return "Boat Inserted!";
 	}
+
+	public String insertRandomBoat() {
+		// TODO Auto-generated method stub
+		return "Radom Boat Inserted!";
+	}
+
+	public String readPosition() {
+		// TODO Auto-generated method stub
+		return "Insert Postion:";
+	}
+
+
 
 }

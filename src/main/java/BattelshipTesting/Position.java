@@ -3,8 +3,8 @@ package BattelshipTesting;
 public class Position {
 
 	int x;
-
-	int y;
+	int y; 
+	
 	
 	public Position(int x, int y) {
 		// TODO Auto-generated constructor stub+
@@ -12,27 +12,7 @@ public class Position {
 		this.y = y;
 	}
 
-	public Object getOrientationString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	public void setOrientacion(int i) {
-		// TODO Auto-generated method stub
-
-	}
-
-
-
-	public void setOrientation(int i) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void setSize(int i) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	@Override
 	public String toString() {

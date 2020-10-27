@@ -48,7 +48,7 @@ public class BoardTest {
 	public void testInsertPosition() {
 
 		Position positionTest = new Position(0, 0);
-		positionTest.setOrientation(0);
+
 
 		Board boardTest = new Board();
 		boardTest.insertPosition(positionTest);
@@ -75,27 +75,7 @@ public class BoardTest {
 
 	}
 
-	/*
-	 * Test checks if you can insert from an orientation and the size of the ship
-	 * 
-	 */
-	@Test
-	public void testInserOrientation() {
-
-		Position positionTest = new Position(0, 0);
-		positionTest.setOrientation(0);
-		positionTest.setSize(2);
-
-		Board boardTest = new Board();
-		assertTrue(boardTest.insertOrientation(positionTest));
-		positionTest.setOrientation(1);
-		assertTrue(boardTest.insertOrientation(positionTest));
-		positionTest.setOrientation(2);
-		assertTrue(boardTest.insertOrientation(positionTest));
-		positionTest.setOrientation(3);
-		assertTrue(boardTest.insertOrientation(positionTest));
-
-	}
+	
 
 	/*
 	 * Test Put margin of protection to the boat (1 Square)
@@ -114,11 +94,40 @@ public class BoardTest {
 	 * the orientation (Temporary) and we do not check the margins
 	 */
 	@Test
-	public void testInsertBoart() {
+	public void testInsertBoat() {
 
 		Board boardTest = new Board();
 		assertEquals(boardTest.insertBoat(), "Boat Inserted!");
 
 	}
+	
+
+	/*
+	 * Test get 
+	 */
+	@Test
+	public void testInsertRandomBoat() {
+
+		Board boardTest = new Board();
+		assertEquals(boardTest.insertRandomBoat(), "Radom Boat Inserted!");
+
+	}
+	
+	/*
+	 * Test get 
+	 */
+	
+	@Test
+	public void testReadPosition() {
+
+		Board boardTest = new Board();
+		assertEquals(boardTest.readPosition(), "Insert Postion:");
+
+	}
+	
+
+	
+
+	
 
 }
