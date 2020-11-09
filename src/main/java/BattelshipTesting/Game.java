@@ -2,6 +2,11 @@ package BattelshipTesting;
 
 import interfaces.IManagerIO;
 
+/**
+ * Main Game Class
+ * @author Cristian Vega
+ *
+ */
 public class Game {
 
 	static IManagerIO managerIO = new ManagerIO();

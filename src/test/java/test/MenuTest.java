@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -18,8 +19,7 @@ public class MenuTest {
 	public ByteArrayOutputStream resultado;
 
 	/*
-	 * Función que se ejecuta antes de cada @Test inicializa y setea un outputstream
-	 * para recoger los datos printados en consola
+	 * Function that runs before each @Test initializes and sets an outputstream to collect the printed data in the console
 	 */
 	@Before
 	public void beforeAll() {
@@ -36,9 +36,9 @@ public class MenuTest {
 	
 	public void testStartGame() {
 		
-		int[] input = new int[] { 2,3 };
+		int[] input = new int[] { 1 };
 		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertEquals(testMenu.showMenu(), "------Main Menu------");
+		assertTrue(resultado.toString().contains("------Main Menu------"));
 
 	}
 
@@ -50,7 +50,7 @@ public class MenuTest {
 		
 		int[] input = new int[] { 1 };
 		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertEquals(testMenu.getOption(new ManagerIOMock(input)), "Starting Game");
+		assertTrue(resultado.toString().contains("Starting Game"));
 
 	}
 
@@ -62,7 +62,7 @@ public class MenuTest {
 		
 		int[] input = new int[] { 2 };
 		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertEquals(testMenu.getOption(new ManagerIOMock(input)), "Exiting Game");
+		assertTrue(resultado.toString().contains("Exiting Game"));
 
 	}
 

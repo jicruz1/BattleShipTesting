@@ -1,35 +1,42 @@
 package BattelshipTesting;
 
 import interfaces.IManagerIO;
-
+/**
+ * Menu class - Print and choose diferent game options
+ * @author Cristian Vega
+ *
+ */
 public class Menu {
 
 	IManagerIO managerIO;
-	
-	public Menu(IManagerIO managerIO){
+
+	public Menu(IManagerIO managerIO) {
 		this.managerIO = managerIO;
 		this.showMenu();
 		getOption(managerIO);
 
 	}
-	public String showMenu() {
-		// TODO Auto-generated method stub
-		return "------Main Menu------";
+
+	public void showMenu() {
+
+		System.out.println("------Main Menu------");
+		System.out.println("1- Play ");
+		System.out.println("2- Exit ");
 	}
 
-	public String getOption(IManagerIO managerIO) {
-		
+	public void getOption(IManagerIO managerIO) {
+
 		int option = managerIO.inInt();
 		switch (option) {
-		// TODO Auto-generated method stub
 		case 1:
-			return "Starting Game";
+			System.out.println("------Starting Game------");
+			break;
 		case 2:
-			return "Exiting Game";
+			System.out.println("Exiting Game");
+			break;
 		default:
 			break;
 		}
-		return "";
 
 	}
 
