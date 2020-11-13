@@ -1,14 +1,16 @@
 package BattelshipTesting;
 
+import interfaces.IManagerIO;
+
 public class Player {
 
 	String name;
 	Board own;
 	Board enemy;
-	
-	public Player(String string) {
+
+	public Player(String string, IManagerIO managerIO) {
 		// TODO Auto-generated constructor stub
-		this.name= string;
+		this.name = string;
 	}
 
 	public String getName() {
@@ -16,8 +18,7 @@ public class Player {
 		return this.name;
 	}
 
-	
-	public String attack() {
+	public String attack(Player attack) {
 		// TODO Auto-generated method stub
 		return "Attack!";
 	}
@@ -26,10 +27,15 @@ public class Player {
 		// TODO Auto-generated method stub
 		return "Random Attack!";
 	}
-	
+
 	public String positionBoat() {
 		// TODO Auto-generated method stub
 		return "Postion boat!";
 	}
-	
+
+	public boolean isWinning() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }
