@@ -1,43 +1,56 @@
 package BattelshipTesting;
 
+import interfaces.IManagerIO;
+
 public class Match {
-	
+
+	IManagerIO managerIO;
+
 	Player randomIA;
 	Player user;
 
-	public Match(){
-		
-		this.randomIA = new Player("RandomIA");
-		this.user = new Player("Player");
-	}
-	public Player getRandomIA() {
-		// TODO Auto-generated method stub
-		return this.randomIA;
-	}
+	boolean endGame = false;
+	boolean playerTurn = true;
 
-	public Player getUserPlayer() {
-		// TODO Auto-generated method stub
-		return this.user;
+	public Match() {
+
+		this.randomIA = new Player("RandomIA", managerIO);
+		this.user = new Player("Player", managerIO);
+		this.startMatch();
 	}
 
 	public boolean isFinalGame() {
-		// TODO Auto-generated method stub
-		return false;
+
+		return endGame;
 	}
 
 	public boolean isTurnPlayer() {
-		// TODO Auto-generated method stub
-		return false;
+
+		return playerTurn;
 	}
 
 	public Object showWinner() {
-		// TODO Auto-generated method stub
+
 		return "Player";
 	}
 
-	public String startMatch() {
-		// TODO Auto-generated method stub
-		return "Match started!";
+	public void startMatch() {
+
+		while (!isFinalGame()) {
+
+			if (isTurnPlayer()) {
+				user.attack(randomIA);
+				playerTurn = false;
+			} else {
+				randomIA.attack(user);
+				playerTurn = true;
+			}
+
+			if (user.isWinning() || randomIA.isWinning()) {
+				endGame = true;
+			}
+		}
+		showWinner();
 	}
 
 }
