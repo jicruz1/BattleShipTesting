@@ -52,7 +52,7 @@ public class MenuTest {
 	public void testMenuOptions() {
 		int[] input = new int[] { 2, 3 };
 		new Menu(new ManagerIOMock(input));
-		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Configuration(TODO)\n" + "3- Exit\n"
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
 				+ "Exiting Game";
 		assertEquals(expected, result.toString());
 	}
@@ -64,7 +64,7 @@ public class MenuTest {
 	public void testMenuExit() {
 		int[] input = new int[] { 2 };
 		new Menu(new ManagerIOMock(input));
-		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Configuration(TODO)\n" + "3- Exit\n"
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
 				+ "Exiting Game";
 		assertEquals(expected, result.toString());
 	}

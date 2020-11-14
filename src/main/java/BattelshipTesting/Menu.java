@@ -26,8 +26,7 @@ public class Menu {
 
 		System.out.print("------Main Menu------\n");
 		System.out.print("1- Play\n");
-		System.out.print("2- Configuration(TODO)\n");
-		System.out.print("3- Exit\n");
+		System.out.print("2- Exit\n");
 	}
 
 	/**
