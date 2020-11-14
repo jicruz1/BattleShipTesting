@@ -31,17 +31,7 @@ public class Match {
 		this.startMatch();
 	}
 
-	/**
-	 * Tells us who wins the game
-	 */
-	public void showWinner() {
 
-		if (this.user.isWinning()) {
-			System.out.println("Game winner: " + this.user.getName() + "!!!");
-		} else {
-			System.out.println("Game winner: " + this.randomIA.getName() + "!!!");
-		}
-	}
 
 	/**
 	 * Main match/game loop
@@ -63,6 +53,18 @@ public class Match {
 			}
 		}
 		showWinner();
+	}
+	
+	/**
+	 * Tells us who wins the game
+	 */
+	public void showWinner() {
+
+		if (this.user.isWinning()) {
+			System.out.println("Game winner: " + this.user.getName() + "!!!");
+		} else {
+			System.out.println("Game winner: " + this.randomIA.getName() + "!!!");
+		}
 	}
 
 }
