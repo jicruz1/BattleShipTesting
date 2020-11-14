@@ -72,8 +72,8 @@ public class MenuTest {
 
 
 	/**
-	 * Black box testing of function getOption equivalent partitions
-	 * (-inf, 0), [0, 3], [4, inf) frontera 1, 3 limites: 0, 4, -1, 4
+	 * Black box testing of function getOption limit values
+	 * (-inf, 0), [0, 3], [4, inf) frontier 1, 3 limit: 0, 4, -1, 4
 	 */
 	@Test
 	public void testMenuBadOption() {
