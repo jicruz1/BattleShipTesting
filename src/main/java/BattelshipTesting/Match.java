@@ -31,8 +31,6 @@ public class Match {
 		this.startMatch();
 	}
 
-
-
 	/**
 	 * Main match/game loop
 	 */
@@ -54,7 +52,7 @@ public class Match {
 		}
 		showWinner();
 	}
-	
+
 	/**
 	 * Tells us who wins the game
 	 */
