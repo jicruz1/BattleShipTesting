@@ -17,7 +17,7 @@ import utils.Constants;
 /**
  * This class of test is in charge of the unit tests of the Partida class
  * 
- * @author Budy
+ * @author Ismael Pajuelo
  *
  */
 public class PlayerTest {
@@ -43,15 +43,24 @@ public class PlayerTest {
 
 		Player jugadorTest = new Player(Constants.NAME_PLAYER,
 				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
-		Player randomTest = new Player(Constants.RANDOM_PLAYER_IA,
-				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
 
 		assertEquals(Constants.NAME_PLAYER, jugadorTest.getName());
 		assertEquals(1, jugadorTest.getType());
+
+	}
+
+	/**
+	 * Test to check the creation of Player objects
+	 */
+	@Test
+	public void testCreateRandomIA() {
+
+		Player randomTest = new Player(Constants.RANDOM_PLAYER_IA,
+				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
+
 		assertEquals(Constants.RANDOM_PLAYER_IA, randomTest.getName());
 		assertEquals(0, randomTest.getType());
 	}
-
 
 	/**
 	 * Test to verify that the players attack correctly
@@ -67,10 +76,8 @@ public class PlayerTest {
 		jugadorTest.attack(randomTest);
 		assertTrue(result.toString().contains("Player => " + Constants.NAME_PLAYER + " ATTACK!!!"));
 
-	
-
 	}
-	
+
 	/**
 	 * Test to verify that the machine random attack correctly
 	 */
@@ -82,16 +89,14 @@ public class PlayerTest {
 		Player randomTest = new Player(Constants.RANDOM_PLAYER_IA,
 				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
 
-		
-
 		randomTest.attack(jugadorTest);
 		assertTrue(result.toString().contains("Machine => " + Constants.RANDOM_PLAYER_IA + " ATTACK RANDOM!"));
 
 	}
 
-	/*
-	 * Test para comprobar comprueba correctamente cuando un Jugador/Random gana la
-	 * partida (todos los barcos enemigos hundidos)
+	/**
+	 * Test to check correctly checks when a Player / Random wins the game (all
+	 * enemy ships sunk)
 	 */
 	@Test
 	public void testJugadorGana() {
