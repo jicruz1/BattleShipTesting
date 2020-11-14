@@ -229,8 +229,8 @@ public class Board {
 		int orientacion = -1;
 		boolean aux = false;
 		while (!aux) {
-			System.out.println("Orientacion:");
-			System.out.println(" 0-Derecha \n 1-Abajo \n 2- Arriba \n 3-Izquierda \n");
+			System.out.println("Orientation:");
+			System.out.println(" 0-Right \n 1-Down \n 2-Up \n 3-Left \n");
 			int ori = managerIO.inInt();
 
 			if (ori >= 0 && ori < 4) {
@@ -253,7 +253,7 @@ public class Board {
 		while (!aux) {
 
 			while (!aux) {
-				System.out.println("Posicion X (1-10):");
+				System.out.println("Position X (1-10):");
 				int x = managerIO.inInt();
 				if (x > 0 && x < 11) {
 					lectura.setX(x - 1);
@@ -262,7 +262,7 @@ public class Board {
 			}
 			aux = false;
 			while (!aux) {
-				System.out.println("Posicion Y (1-10):");
+				System.out.println("Position Y (1-10):");
 				int y = managerIO.inInt();
 				if (y > 0 && y < 11) {
 					lectura.setY(y - 1);
@@ -359,7 +359,7 @@ public class Board {
 			posicion.setSize(tamañoBarcoActual);
 			insertada = isValidOrientation(posicion);
 		}
-		System.out.println("La IA-Random ya ha posicionado sus barcos!\n");
+		System.out.println("AI-Random has already positioned its ships!\n");
 		insertBoat(posicion);
 		posicion.toString();
 	}
@@ -375,11 +375,11 @@ public class Board {
 		Board aux = randomIA.getOwn();
 
 		if (aux.board[posicion.getX()][posicion.getY()] == 1 && this.board[posicion.getX()][posicion.getY()] < 2) {
-			System.out.println("Barco TOCADO!");
+			System.out.println("Bot Hit!");
 			this.board[posicion.getX()][posicion.getY()] = 2;
 			this.numberBoats--;
 		} else {
-			System.out.println("AGUA!");
+			System.out.println("Water!");
 			this.board[posicion.getX()][posicion.getY()] = 3;
 		}
 
@@ -397,11 +397,11 @@ public class Board {
 		Board aux = player.getOwn();
 
 		if (aux.board[posicion.getX()][posicion.getY()] == 1 && this.board[posicion.getX()][posicion.getY()] < 2) {
-			System.out.println("Barco TOCADO!");
+			System.out.println("Bot Hit!");
 			this.board[posicion.getX()][posicion.getY()] = 2;
 			this.numberBoats--;
 		} else {
-			System.out.println("AGUA!");
+			System.out.println("Water!");
 			this.board[posicion.getX()][posicion.getY()] = 3;
 		}
 	}
