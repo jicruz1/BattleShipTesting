@@ -45,11 +45,11 @@ public class Player implements IPlayer {
 	public void locateBoat() {
 
 		if (this.type == 1) {
-			System.out.println("Jugador: " + this.name + "\nPosiciona tus barcos!");
+			System.out.println("Player: " + this.name + "\nPosition your boats!");
 
 			for (int i = 0; i < Constants.BOAT_LIST.length; i++) {
 				System.out.println(
-						"Posicion (X,Y) cabeza del barco que ocupa " + Constants.BOAT_LIST[i] + " cuadrados (1/1)");
+						"Position (X, Y) head of the ship it occupies " + Constants.BOAT_LIST[i] + " squares (1/1)");
 
 				own.insertPosicion(Constants.BOAT_LIST[i]);
 				own.showBoard();
@@ -57,7 +57,7 @@ public class Player implements IPlayer {
 			}
 		} else {
 
-			System.out.println("Maquina: " + this.name + "\nPosicionando sus barcos de manera aleatoria!");
+			System.out.println("Machine: " + this.name + "\nRandomly positioning your boats!");
 			for (int i = 0; i < Constants.BOAT_LIST.length; i++) {
 
 				own.insertPosicionRandom(Constants.BOAT_LIST[i]);
@@ -74,7 +74,7 @@ public class Player implements IPlayer {
 
 		if (this.type == 1) {
 			System.out.println("Player => " + this.name + " ATTACK!!!");
-			System.out.println("Que posicion quieres atacar?");
+			System.out.println("What position do you want to attack?");
 
 			enemy.atacar(player);
 			enemy.showBoard();
