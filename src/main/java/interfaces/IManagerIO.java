@@ -1,5 +1,10 @@
 package interfaces;
 
+/**
+ * Interface of ManagerIO (Manager Input/Output)
+ * @author Cristian Vega
+ *
+ */
 public interface IManagerIO {
 	
 	public int inInt();

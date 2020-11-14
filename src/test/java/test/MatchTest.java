@@ -1,52 +1,85 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-import BattelshipTesting.Match;
+import BattelshipTesting.Menu;
+import mock.ManagerIOMock;
 
-/*
- * Esta clase de test se encarga de las pruebas unitarias de la clase Partida
+/**
+ * This test class takes care of the unit tests of the Match class
+ * 
+ * @author Cristian Vega
+ *
  */
-
 public class MatchTest {
 
-	/*
-	 * Test comprueba que se crea una Partida correctamente
+	private PrintStream systemOutOriginal;
+	public ByteArrayOutputStream result;
+
+	/**
+	 * Function that is executed before each @Test initializes and sets an
+	 * outputstream to collect the data printed in the console
 	 */
-	@Test
-	public void testCreateMatch() {
-
-		Match matchTest = new Match();
-		assertEquals("RandomIA", matchTest.getRandomIA().getName());
-		assertEquals("Player", matchTest.getUserPlayer().getName());
-		
-
+	@Before
+	public void beforeAll() {
+		systemOutOriginal = System.out;
+		result = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(result));
 	}
 
-	/*
-	 * Test comprueba que se empieza la partida
+	/**
+	 * Function that returns the system output to its original state after
+	 * each @Test
 	 */
-	@Test
-	public void testStartMatch() {
-
-		Match matchTest = new Match();
-		assertEquals(matchTest.startMatch(), "Match started!");
-
+	@After
+	public void restoreSystemOutStream() {
+		System.setOut(systemOutOriginal);
 	}
 
-	/*
-	 * Test comprueba quien es el ganador
+	/**
+	 * Test that executes a sequence of actions with a mock that makes the Human
+	 * player win
 	 */
 	@Test
-	public void testShowMatch() {
+	public void testWinnerPlayer() {
 
-		Match matchTest = new Match();
-		assertEquals("Player", matchTest.showWinner());
+		int[] arrayInputPlayer = new int[] { 1, 1, 1, 1, 1, 3, 1, 1, 5, 1, 1, 7, 1, 1, 9, 1, 6, 1, 0, 8, 1, 0, 10, 1, 0,
+				8, 8, 0, 10, 8, 0, 1, 1, 2, 1, 3, 1, 4, 1, 1, 3, 2, 3, 3, 3, 1, 5, 2, 5, 3, 5, 1, 7, 2, 7, 1, 9, 2, 9,
+				6, 1, 6, 2, 8, 1, 8, 8, 10, 1, 10, 8 };
+		int[] arrayInputRandom = new int[] { 1, 1, 1, 1, 3, 1, 1, 5, 1, 1, 7, 1, 1, 9, 1, 6, 1, 0, 8, 1, 0, 10, 1, 0, 8,
+				8, 0, 10, 8, 0, 1, 1, 1, 3, 1, 5, 1, 7, 1, 9, 6, 1, 8, 1, 10, 1, 8, 8, 10, 8 };
 
+		new Menu(new ManagerIOMock(arrayInputPlayer, arrayInputRandom));
+
+		assertTrue(result.toString().contains("Game winner: HumanPlayer!!!"));
+	}
+
+	/**
+	 * Test that executes a sequence of actions with a mock that makes the IA player
+	 * win
+	 */
+	@Test
+	public void testWinnerRandom() {
+
+		result = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(result));
+
+		int[] arrayInputRandom = new int[] { 1, 1, 1, 1, 3, 1, 1, 5, 1, 1, 7, 1, 1, 9, 1, 6, 1, 0, 8, 1, 0, 10, 1, 0, 8,
+				8, 0, 10, 8, 0, 1, 1, 2, 1, 3, 1, 4, 1, 1, 3, 2, 3, 3, 3, 1, 5, 2, 5, 3, 5, 1, 7, 2, 7, 1, 9, 2, 9, 6,
+				1, 6, 2, 8, 1, 8, 8, 10, 1, 10, 8 };
+
+		int[] arrayInputPlayer = new int[] { 1, 1, 1, 1, 1, 3, 1, 1, 5, 1, 1, 7, 1, 1, 9, 1, 6, 1, 0, 8, 1, 0, 10, 1, 0,
+				8, 8, 0, 10, 8, 0 };
+
+		new Menu(new ManagerIOMock(arrayInputPlayer, arrayInputRandom));
+		assertTrue(result.toString().contains("Game winner: RandomIA!!!"));
 	}
 
 }

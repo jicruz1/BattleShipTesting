@@ -1,6 +1,7 @@
 package BattelshipTesting;
 
 import interfaces.IManagerIO;
+import utils.Constants;
 
 /**
  * Class that manages the match
@@ -9,6 +10,8 @@ import interfaces.IManagerIO;
  *
  */
 public class Match {
+
+	IManagerIO managerIO;
 
 	Player randomIA;
 	Player user;
@@ -21,37 +24,45 @@ public class Match {
 	 * 
 	 * @param managerIO
 	 */
-	public Match() {
+	public Match(IManagerIO managerIO) {
 
-		this.user = new Player("Player");
-		this.randomIA = new Player("RandomIA");
+		this.user = new Player(Constants.NAME_PLAYER, managerIO);
+		this.randomIA = new Player(Constants.RANDOM_PLAYER_IA, managerIO);
 		this.startMatch();
 	}
 
 	/**
 	 * Tells us who wins the game
 	 */
-	public String showWinner() {
+	public void showWinner() {
 
-		return "Player";
+		if (this.user.isWinning()) {
+			System.out.println("Game winner: " + this.user.getName() + "!!!");
+		} else {
+			System.out.println("Game winner: " + this.randomIA.getName() + "!!!");
+		}
 	}
 
 	/**
 	 * Main match/game loop
 	 */
-	public String startMatch() {
+	public void startMatch() {
 
-		return "Match started!";
-	}
+		while (!this.endGame) {
 
-	public Player getRandomIA() {
-		// TODO Auto-generated method stub
-		return randomIA;
-	}
+			if (this.playerTurn) {
+				user.attack(randomIA);
+				playerTurn = false;
+			} else {
+				randomIA.attack(user);
+				playerTurn = true;
+			}
 
-	public Player getUserPlayer() {
-		// TODO Auto-generated method stub
-		return user;
+			if (user.isWinning() || randomIA.isWinning()) {
+				endGame = true;
+			}
+		}
+		showWinner();
 	}
 
 }

@@ -1,7 +1,5 @@
 package BattelshipTesting;
 
-import java.io.IOException;
-
 import interfaces.IManagerIO;
 
 /**
@@ -12,40 +10,49 @@ import interfaces.IManagerIO;
  */
 public class Menu {
 
-	public Menu() {
+	IManagerIO managerIO;
 
+	public Menu(IManagerIO managerIO) {
+		this.managerIO = managerIO;
 		this.showMenu();
+		getOption(managerIO);
 
 	}
 
 	/**
 	 * Displays the main menu of the game
 	 */
-	public String showMenu() {
+	public void showMenu() {
 
-		return "------Main Menu------\n1- Play \n2- Exit";
+		System.out.print("------Main Menu------\n");
+		System.out.print("1- Play\n");
+		System.out.print("2- Configuration(TODO)\n");
+		System.out.print("3- Exit\n");
 	}
 
 	/**
 	 * The user selects the option
 	 * 
 	 * @param managerIO
-	 * @throws IOException
 	 */
-	public String getOption(int opction) {
+	public void getOption(IManagerIO managerIO) {
 
-		switch (opction) {
-
+		int option = managerIO.inInt();
+		switch (option) {
 		case 1:
-			return "------Starting Game------";
-
-		case 2:
-			return "Exiting Game";
-
-		default:
+			System.out.print("------Starting Game------");
+			new Match(this.managerIO);
 			break;
+		case 2:
+			System.out.print("Exiting Game");
+			break;
+		default:
+			System.out.print("Invalid Option!");
+			this.showMenu();
+			this.getOption(managerIO);
+			break;
+
 		}
-		return null;
 
 	}
 

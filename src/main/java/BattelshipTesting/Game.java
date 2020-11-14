@@ -10,10 +10,16 @@ import interfaces.IManagerIO;
  */
 public class Game {
 
+	static IManagerIO managerIO = new ManagerIO();
+
 	public static void main(String[] args) {
 
-		new Menu();
+		new Menu(managerIO);
 
+	}
+
+	public static void setManager(IManagerIO manager) {
+		Game.managerIO = manager;
 	}
 
 }

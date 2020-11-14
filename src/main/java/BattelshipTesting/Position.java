@@ -28,20 +28,20 @@ public class Position {
 	public String getOrientacionString() {
 		switch (this.orientation) {
 		case 0:
-			return "Derecha";
+			return "Right";
 		case 1:
-			return "Abajo";
+			return "Down";
 		case 2:
-			return "Arriba";
+			return "Up";
 		case 3:
-			return "Izquierda";
+			return "Left";
 		default:
-			return "No tiene orientacion";
+			return "No orientation";
 		}
 	}
 
 	public String toString() {
-		return "Position [x=1, y=1]";
+		return "Position [x=" + (x + 1) + ", y=" + (y + 1) + ", orientation=" + getOrientacionString() + "]";
 	}
 
 	public int getX() {

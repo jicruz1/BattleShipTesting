@@ -1,14 +1,17 @@
 package BattelshipTesting;
 
 import interfaces.IManagerIO;
+import interfaces.IPlayer;
+
+import utils.Constants;
 
 /**
  * Class to manager player entity
  * 
- * @author Cristian
+ * @author Budy
  *
  */
-public class Player {
+public class Player implements IPlayer {
 
 	String name;
 	Board own;
@@ -19,16 +22,68 @@ public class Player {
 	 * Player default constructor
 	 * 
 	 * @param string
-	 * @param managerIO
+	 * @param managerIOMock
 	 */
-	public Player(String string) {
+	public Player(String string, IManagerIO managerIO) {
 
 		this.name = string;
-
+		this.own = new Board(managerIO);
+		this.enemy = new Board(managerIO);
 		if (name.contains("IA")) {
 			this.type = 0;
 		} else {
 			this.type = 1;
+		}
+		this.locateBoat();
+	}
+
+
+
+	/**
+	 * Position ships on the board
+	 */
+	public void locateBoat() {
+
+		if (this.type == 1) {
+			System.out.println("Jugador: " + this.name + "\nPosiciona tus barcos!");
+
+			for (int i = 0; i < Constants.BOAT_LIST.length; i++) {
+				System.out.println(
+						"Posicion (X,Y) cabeza del barco que ocupa " + Constants.BOAT_LIST[i] + " cuadrados (1/1)");
+
+				own.insertPosicion(Constants.BOAT_LIST[i]);
+				own.showBoard();
+
+			}
+		} else {
+
+			System.out.println("Maquina: " + this.name + "\nPosicionando sus barcos de manera aleatoria!");
+			for (int i = 0; i < Constants.BOAT_LIST.length; i++) {
+
+				own.insertPosicionRandom(Constants.BOAT_LIST[i]);
+
+			}
+		}
+
+	}
+
+	/**
+	 * Allows you to attack the player
+	 */
+	public void attack(IPlayer player) {
+
+		if (this.type == 1) {
+			System.out.println("Player => " + this.name + " ATTACK!!!");
+			System.out.println("Que posicion quieres atacar?");
+
+			enemy.atacar(player);
+			enemy.showBoard();
+
+		} else {
+			System.out.println("Machine => " + this.name + " ATTACK RANDOM!");
+			enemy.atacarRandom(player);
+			enemy.showBoard();
+
 		}
 
 	}
@@ -60,19 +115,12 @@ public class Player {
 		return this.own;
 	}
 
-	public String attackRandom() {
-		// TODO Auto-generated method stub
-		return "Random Attack!";
-	}
+	/**
+	 * Get Player type
+	 */
+	public int getType() {
 
-	public String attack() {
-		// TODO Auto-generated method stub
-		return "Attack!";
-	}
-
-	public String positionBoat() {
-		// TODO Auto-generated method stub
-		return "Postion boat!";
+		return this.type;
 	}
 
 }

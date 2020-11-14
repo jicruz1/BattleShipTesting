@@ -9,47 +9,76 @@ import java.io.PrintStream;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
 import BattelshipTesting.Menu;
 import mock.ManagerIOMock;
+import utils.Constants;
 
+/**
+ * This test class takes care of the unit tests of the Menu class
+ * 
+ * @author Cristia Vega
+ *
+ */
 public class MenuTest {
 
+	public ByteArrayOutputStream result;
 
+	/**
+	 * Function that is executed before each @Test initializes and sets an
+	 * outputstream to collect the data printed in the console
+	 */
+	@Before
+	public void beforeAll() {
 
-	
-	/*
-	 * Test to verify console menu is show
+		result = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(result));
+	}
+
+	/**
+	 * Test that executes a sequence of actions with a mock that makes the player
+	 * win
 	 */
 	@Test
-	public void testStartGame() {
+	public void testMenuRunning() {
 
-		Menu testMenu = new Menu();
-		assertEquals(testMenu.showMenu(),  "------Main Menu------\n1- Play \n2- Exit");
+		new Menu(new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
+		assertTrue(result.toString().contains("------Starting Game------"));
+	}
 
+	/**
+	 * Test that tests that the menu options are correctly printed
+	 */
+	@Test
+	public void testMenuOptions() {
+		int[] input = new int[] { 2, 3 };
+		new Menu(new ManagerIOMock(input));
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Configuration(TODO)\n" + "3- Exit\n"
+				+ "Exiting Game";
+		assertEquals(expected, result.toString());
+	}
+
+	/**
+	 * Test that verifies that the game is correctly exited
+	 */
+	@Test
+	public void testMenuExit() {
+		int[] input = new int[] { 2 };
+		new Menu(new ManagerIOMock(input));
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Configuration(TODO)\n" + "3- Exit\n"
+				+ "Exiting Game";
+		assertEquals(expected, result.toString());
 	}
 
 	/*
-	 * Test to get Player option selected
+	 * Test de caja negra del metodo selecionarOpcion particiones equivalentes
+	 * (-inf, 0), [0, 3], [4, inf) frontera 1, 3 limites: 0, 4, -1, 4
 	 */
 	@Test
-	public void testGetPlayOption() {
+	public void testMenuBadOption() {
 
-		Menu testMenu = new Menu();
-		assertEquals(testMenu.getOption(1), "------Starting Game------");
-
-	}
-
-	/*
-	 * Test return the value of the 
-	 */
-	@Test
-	public void testGetExitOption() {
-
-		Menu testMenu = new Menu();
-		assertEquals(testMenu.getOption(2), "Exiting Game");
-
+		int[] input = new int[] { 0, 4, -1, 4, 2, 3 };
+		new Menu(new ManagerIOMock(input));
+		assertTrue(result.toString().contains("Invalid Option!"));
 	}
 
 }
