@@ -34,16 +34,6 @@ public class MenuTest {
 		System.setOut(new PrintStream(result));
 	}
 
-	/**
-	 * Test that executes a sequence of actions with a mock that makes the player
-	 * win
-	 */
-	@Test
-	public void testMenuRunning() {
-
-		new Menu(new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
-		assertTrue(result.toString().contains("------Starting Game------"));
-	}
 
 	/**
 	 * Test that tests that the menu options are correctly printed
@@ -55,6 +45,17 @@ public class MenuTest {
 		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
 				+ "Exiting Game";
 		assertEquals(expected, result.toString());
+	}
+
+	/**
+	 * Test that executes a sequence of actions with a mock that makes the player
+	 * win
+	 */
+	@Test
+	public void testMenuRunning() {
+
+		new Menu(new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
+		assertTrue(result.toString().contains("------Starting Game------"));
 	}
 
 	/**
