@@ -40,7 +40,7 @@ public class MenuTest {
 	 */
 	@Test
 	public void testMenuOptions() {
-		int[] input = new int[] { 2, 3 };
+		int[] input = new int[] { 2 };
 		new Menu(new ManagerIOMock(input));
 		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
 				+ "Exiting Game";
