@@ -70,8 +70,9 @@ public class MenuTest {
 		assertEquals(expected, result.toString());
 	}
 
-	/*
-	 * Test de caja negra del metodo selecionarOpcion particiones equivalentes
+
+	/**
+	 * Black box testing of function getOption equivalent partitions
 	 * (-inf, 0), [0, 3], [4, inf) frontera 1, 3 limites: 0, 4, -1, 4
 	 */
 	@Test
