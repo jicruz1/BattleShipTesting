@@ -52,8 +52,9 @@ public class PlayerTest {
 		assertEquals(0, randomTest.getType());
 	}
 
-	/*
-	 * Test para comprobar que los jugadores atacan correctamente
+
+	/**
+	 * Test to verify that the players attack correctly
 	 */
 	@Test
 	public void testPlayerAttack() {
@@ -65,6 +66,23 @@ public class PlayerTest {
 
 		jugadorTest.attack(randomTest);
 		assertTrue(result.toString().contains("Player => " + Constants.NAME_PLAYER + " ATTACK!!!"));
+
+	
+
+	}
+	
+	/**
+	 * Test to verify that the machine random attack correctly
+	 */
+	@Test
+	public void testRandomAttack() {
+
+		Player jugadorTest = new Player(Constants.NAME_PLAYER,
+				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
+		Player randomTest = new Player(Constants.RANDOM_PLAYER_IA,
+				new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
+
+		
 
 		randomTest.attack(jugadorTest);
 		assertTrue(result.toString().contains("Machine => " + Constants.RANDOM_PLAYER_IA + " ATTACK RANDOM!"));
