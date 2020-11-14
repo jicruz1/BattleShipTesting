@@ -1,7 +1,14 @@
 package BattelshipTesting;
 
 import interfaces.IManagerIO;
+import utils.Constants;
 
+/**
+ * Class that manages the match
+ * 
+ * @author Cristian Vega
+ *
+ */
 public class Match {
 
 	IManagerIO managerIO;
@@ -12,33 +19,38 @@ public class Match {
 	boolean endGame = false;
 	boolean playerTurn = true;
 
-	public Match() {
+	/**
+	 * Default constructor
+	 * 
+	 * @param managerIO
+	 */
+	public Match(IManagerIO managerIO) {
 
-		this.randomIA = new Player("RandomIA", managerIO);
-		this.user = new Player("Player", managerIO);
+		this.user = new Player(Constants.NAME_PLAYER, managerIO);
+		this.randomIA = new Player(Constants.RANDOM_PLAYER_IA, managerIO);
 		this.startMatch();
 	}
 
-	public boolean isFinalGame() {
+	/**
+	 * Tells us who wins the game
+	 */
+	public void showWinner() {
 
-		return endGame;
+		if (this.user.isWinning()) {
+			System.out.println("Ganador de la partida " + this.user.getName() + "!!!");
+		} else {
+			System.out.println("Ganador de la partida " + this.randomIA.getName() + "!!!");
+		}
 	}
 
-	public boolean isTurnPlayer() {
-
-		return playerTurn;
-	}
-
-	public Object showWinner() {
-
-		return "Player";
-	}
-
+	/**
+	 * Main match/game loop
+	 */
 	public void startMatch() {
 
-		while (!isFinalGame()) {
+		while (!this.endGame) {
 
-			if (isTurnPlayer()) {
+			if (this.playerTurn) {
 				user.attack(randomIA);
 				playerTurn = false;
 			} else {

@@ -3,7 +3,7 @@ package BattelshipTesting;
 import interfaces.IManagerIO;
 
 /**
- * Main Game Class
+ * Main Game Class ( Void main / Entry point)
  * @author Cristian Vega
  *
  */

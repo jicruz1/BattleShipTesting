@@ -1,13 +1,15 @@
 package BattelshipTesting;
 
-
 import java.util.Random;
 import java.util.Scanner;
 
 import interfaces.IManagerIO;
 
-
-
+/**
+ * Class to manager Input/Outputs
+ * @author Cristian Vega
+ *
+ */
 public class ManagerIO implements IManagerIO {
 	private Scanner scanner = new Scanner(System.in);;
 	Random rn;
