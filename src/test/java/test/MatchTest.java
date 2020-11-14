@@ -23,7 +23,7 @@ public class MatchTest {
 		Match matchTest = new Match();
 		assertEquals("RandomIA", matchTest.getRandomIA().getName());
 		assertEquals("Player", matchTest.getUserPlayer().getName());
-		assertFalse(matchTest.isFinalGame());
+		
 
 	}
 

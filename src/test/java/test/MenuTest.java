@@ -16,29 +16,17 @@ import mock.ManagerIOMock;
 
 public class MenuTest {
 
-	public ByteArrayOutputStream resultado;
 
-	/*
-	 * Function that runs before each @Test initializes and sets an outputstream to collect the printed data in the console
-	 */
-	@Before
-	public void beforeAll() {
-
-		resultado = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(resultado));
-	}
 
 	
 	/*
 	 * Test to verify console menu is show
 	 */
 	@Test
-	
 	public void testStartGame() {
-		
-		int[] input = new int[] { 1 };
-		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertTrue(resultado.toString().contains("------Main Menu------"));
+
+		Menu testMenu = new Menu();
+		assertEquals(testMenu.showMenu(),  "------Main Menu------\n1- Play \n2- Exit");
 
 	}
 
@@ -47,10 +35,9 @@ public class MenuTest {
 	 */
 	@Test
 	public void testGetPlayOption() {
-		
-		int[] input = new int[] { 1 };
-		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertTrue(resultado.toString().contains("Starting Game"));
+
+		Menu testMenu = new Menu();
+		assertEquals(testMenu.getOption(1), "------Starting Game------");
 
 	}
 
@@ -59,10 +46,9 @@ public class MenuTest {
 	 */
 	@Test
 	public void testGetExitOption() {
-		
-		int[] input = new int[] { 2 };
-		Menu testMenu = new Menu(new ManagerIOMock(input));
-		assertTrue(resultado.toString().contains("Exiting Game"));
+
+		Menu testMenu = new Menu();
+		assertEquals(testMenu.getOption(2), "Exiting Game");
 
 	}
 

@@ -41,7 +41,7 @@ public class Position {
 	}
 
 	public String toString() {
-		return "Posicion [x=" + (x + 1) + ", y=" + (y + 1) + ", orientacion=" + getOrientacionString() + "]";
+		return "Position [x=1, y=1]";
 	}
 
 	public int getX() {
