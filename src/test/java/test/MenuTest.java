@@ -34,7 +34,6 @@ public class MenuTest {
 		System.setOut(new PrintStream(result));
 	}
 
-
 	/**
 	 * Test that tests that the menu options are correctly printed
 	 */
@@ -42,8 +41,7 @@ public class MenuTest {
 	public void testMenuOptions() {
 		int[] input = new int[] { 2 };
 		new Menu(new ManagerIOMock(input));
-		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
-				+ "Exiting Game";
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n" + "Exiting Game";
 		assertEquals(expected, result.toString());
 	}
 
@@ -65,15 +63,13 @@ public class MenuTest {
 	public void testMenuExit() {
 		int[] input = new int[] { 2 };
 		new Menu(new ManagerIOMock(input));
-		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n"
-				+ "Exiting Game";
+		String expected = "------Main Menu------\n" + "1- Play\n" + "2- Exit\n" + "Exiting Game";
 		assertEquals(expected, result.toString());
 	}
 
-
 	/**
-	 * Black box testing of function getOption limit values
-	 * (-inf, 0), [0, 3], [4, inf) frontier 1, 3 limit: 0, 4, -1, 4
+	 * Black box testing of function getOption limit values (-inf, 0), [0, 3], [4,
+	 * inf) frontier 1, 3 limit: 0, 4, -1, 4
 	 */
 	@Test
 	public void testMenuBadOption() {
