@@ -22,7 +22,8 @@ public class GameTest {
 	public ByteArrayOutputStream resultado;
 
 	/**
-	 * Function that is executed before each @Test initializes and sets an outputstream to collect the data printed in the console
+	 * Function that is executed before each @Test initializes and sets an
+	 * outputstream to collect the data printed in the console
 	 */
 	@Before
 	public void beforeAll() {
