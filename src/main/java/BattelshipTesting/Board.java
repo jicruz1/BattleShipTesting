@@ -276,15 +276,15 @@ public class Board {
 	/**
 	 * Insert an N-size boat in a user-supplied dashboard position
 	 * 
-	 * @param tamañoBarcoActual
+	 * @param sizeBoatCurrent
 	 */
-	public void insertPosicion(int tamañoBarcoActual) {
+	public void insertPosicion(int sizeBoatCurrent) {
 		boolean insertada = false;
 		Position position = new Position();
 		while (!insertada) {
 			position = readPosition();
 			position.setOrientation(readOrientation());
-			position.setSize(tamañoBarcoActual);
+			position.setSize(sizeBoatCurrent);
 			insertada = isValidOrientation(position);
 
 			if (!insertada) {
@@ -348,15 +348,15 @@ public class Board {
 	/**
 	 * Insert an N-size boat in a random board position
 	 * 
-	 * @param tamañoBarcoActual
+	 * @param SizeBoatCurrent
 	 */
-	public void insertPosicionRandom(int tamañoBarcoActual) {
+	public void insertPosicionRandom(int sizeBoatCurrent) {
 		boolean insertada = false;
 		Position posicion = new Position();
 		while (!insertada) {
 			posicion = generatePosition();
 			posicion.setOrientation(generateOrientation());
-			posicion.setSize(tamañoBarcoActual);
+			posicion.setSize(sizeBoatCurrent);
 			insertada = isValidOrientation(posicion);
 		}
 		System.out.println("AI-Random has already positioned its ships!\n");
