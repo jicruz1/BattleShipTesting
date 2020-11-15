@@ -2,7 +2,7 @@ package interfaces;
 
 /**
  * Interface of ManagerIO (Manager Input/Output)
- * @author Cristian Vega
+ * @author Ismael Pajuelo
  *
  */
 public interface IManagerIO {
@@ -14,3 +14,4 @@ public interface IManagerIO {
 	
 	
 }
+
