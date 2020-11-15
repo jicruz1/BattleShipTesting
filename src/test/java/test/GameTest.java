@@ -38,8 +38,6 @@ public class GameTest {
 	@Test
 	public void testGame() {
 
-		// Option 2 Menu => Exit Game!
-
 		int[] input = new int[] { 2 };
 		Game.setManager(new ManagerIOMock(input));
 		Game.main(null);
