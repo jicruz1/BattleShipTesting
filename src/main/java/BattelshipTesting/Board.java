@@ -294,6 +294,25 @@ public class Board {
 		insertBoat(position);
 		position.toString();
 	}
+	
+	/**
+	 * Insert an N-size boat in a random board position
+	 * 
+	 * @param SizeBoatCurrent
+	 */
+	public void insertPosicionRandom(int sizeBoatCurrent) {
+		boolean insertada = false;
+		Position posicion = new Position();
+		while (!insertada) {
+			posicion = generatePosition();
+			posicion.setOrientation(generateOrientation());
+			posicion.setSize(sizeBoatCurrent);
+			insertada = isValidOrientation(posicion);
+		}
+		System.out.println("AI-Random has already positioned its ships!\n");
+		insertBoat(posicion);
+		posicion.toString();
+	}
 
 	/**
 	 * Generates a random boat orientation
@@ -345,24 +364,7 @@ public class Board {
 		return generado;
 	}
 
-	/**
-	 * Insert an N-size boat in a random board position
-	 * 
-	 * @param SizeBoatCurrent
-	 */
-	public void insertPosicionRandom(int sizeBoatCurrent) {
-		boolean insertada = false;
-		Position posicion = new Position();
-		while (!insertada) {
-			posicion = generatePosition();
-			posicion.setOrientation(generateOrientation());
-			posicion.setSize(sizeBoatCurrent);
-			insertada = isValidOrientation(posicion);
-		}
-		System.out.println("AI-Random has already positioned its ships!\n");
-		insertBoat(posicion);
-		posicion.toString();
-	}
+
 
 	/**
 	 * The player attacks the machine

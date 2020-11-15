@@ -132,7 +132,7 @@ public class BoardTest {
 	@Test
 	public void testInsertPositionKO() {
 
-		// Positiones incorrectas y luego correctas
+		//Incorrect and then correct positions
 		int[] input = new int[] { 1, 1, 2, 1 };
 
 		Board testBoard = new Board(new ManagerIOMock(input));
@@ -169,15 +169,12 @@ public class BoardTest {
 		assertEquals(testBoard.getBoard()[1][1], 4);
 	}
 
-	/*
-	 * Test de caja blanca para verificar que se crea la proteccion alrededor del
-	 * barco Test de caja negra del metodo proteccionBarco particiones equivalentes
-	 * (-inf, 0), [0, 3], [4, inf) frontera 0, 3 limites: -1, 1, 3, 4
-	 */
+
+
 	/**
 	 * White box test to verify that protection is created around the ship Black box
 	 * test of the ship protection method equivalent partitions (-inf, 0), [0, 3],
-	 * [4, inf) border 0, 3 limit:: -1, 1, 3, 4
+	 * [4, inf) border 0, 3 limit: -1, 1, 3, 4
 	 */
 	@Test
 	public void testBoatProtection() {
