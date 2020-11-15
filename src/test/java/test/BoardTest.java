@@ -225,7 +225,7 @@ public class BoardTest {
 	 * border 0, 3 limit:: -1, 1, 3, 4
 	 */
 	@Test
-	public void testinsertBoat() {
+	public void testInsertBoat() {
 
 		int[] input = new int[] { 1, 1 };
 		Board testBoard = new Board(new ManagerIOMock(input));
@@ -271,7 +271,7 @@ public class BoardTest {
 	 * [0, 3], [4, inf) frontera 0, 3 limites: -1, 1, 3, 4
 	 */
 	@Test
-	public void testisValidOrientation() {
+	public void testIsValidOrientation() {
 
 		int[] input = new int[] { 1, 1 };
 		Board testBoard = new Board(new ManagerIOMock(input));
