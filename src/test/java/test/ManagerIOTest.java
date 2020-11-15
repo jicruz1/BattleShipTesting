@@ -92,7 +92,7 @@ public class ManagerIOTest {
 
 	}
 
-	/*
+	/**
 	 * Test Function reads keyboard input from an Integer value
 	 */
 	@Test
