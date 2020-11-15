@@ -20,18 +20,6 @@ public class PlayerMock implements IPlayer {
 	}
 
 	@Override
-	public Board getOwn() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void locateBoat() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public boolean isWinning() {
 		return true;
 	}
@@ -47,6 +35,16 @@ public class PlayerMock implements IPlayer {
 			System.out.println("Random Attack!");
 
 		}
+
+	}
+
+	@Override
+	public Board getOwn() {
+		return null;
+	}
+
+	@Override
+	public void locateBoat() {
 
 	}
 
