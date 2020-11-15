@@ -48,6 +48,28 @@ public class BoardTest {
 		System.setOut(systemOutOriginal);
 	}
 
+	/**
+	 * White box test to verify that the Board initializes correctly Loop Testing
+	 * (All = 0)
+	 */
+	@Test
+	public void testInitBoard() {
+		Board board = new Board(new ManagerIOMock());
+
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				assertEquals(board.getBoard()[i][j], 0);
+			}
+		}
+
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				assertEquals(board.getBoard()[j][i], 0);
+			}
+		}
+
+	}
+	
 	
 	/**
 	 * White box test to verify that the Board is displayed correctly at startup
@@ -84,27 +106,7 @@ public class BoardTest {
 
 	}*/
 
-	/**
-	 * White box test to verify that the Board initializes correctly Loop Testing
-	 * (All = 0)
-	 */
-	@Test
-	public void testInitBoard() {
-		Board board = new Board(new ManagerIOMock());
 
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				assertEquals(board.getBoard()[i][j], 0);
-			}
-		}
-
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				assertEquals(board.getBoard()[j][i], 0);
-			}
-		}
-
-	}
 
 	/**
 	 * White box test to verify that a Position is inserted correctly
