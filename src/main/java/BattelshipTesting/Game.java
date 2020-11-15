@@ -12,6 +12,10 @@ public class Game {
 
 	static IManagerIO managerIO = new ManagerIO();
 
+	/**
+	 *  Calls the Main Game function that initializes the Menu
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		new Menu(managerIO);
