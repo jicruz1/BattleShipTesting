@@ -24,9 +24,9 @@ public class Player implements IPlayer {
 	 * @param string
 	 * @param managerIOMock
 	 */
-	public Player(String string, IManagerIO managerIO) {
+	public Player(String name, IManagerIO managerIO) {
 
-		this.name = string;
+		this.name = name;
 		this.own = new Board(managerIO);
 		this.enemy = new Board(managerIO);
 		if (name.contains("IA")) {
