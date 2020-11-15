@@ -4,28 +4,27 @@ import interfaces.IManagerIO;
 
 public class ManagerIOMock implements IManagerIO {
 
-	//int posicion = 0;
-	//int posicionRandom = 0;
+
 
 	int[] arrayInput;
 	int[] arrayInputRandom;
-	int posicion=0;
-	int posicionRandom=0;
+	int position=0;
+	int positionRandom=0;
 	
 
 
-	public ManagerIOMock(int[] secuenciaInputs , int[] secuenciaRandom){
-		arrayInput = new int[secuenciaInputs.length] ;
-		arrayInput= secuenciaInputs;
-		arrayInputRandom = new int[secuenciaRandom.length] ;
-		arrayInputRandom= secuenciaRandom;
+	public ManagerIOMock(int[] inputsSequence , int[] randomSequence){
+		arrayInput = new int[inputsSequence.length] ;
+		arrayInput= inputsSequence;
+		arrayInputRandom = new int[randomSequence.length] ;
+		arrayInputRandom= randomSequence;
 	}
 	
 	
-	public ManagerIOMock(int[] secuenciaInputs ){
+	public ManagerIOMock(int[] inputsSequence ){
 
-		arrayInput = new int[secuenciaInputs.length] ;
-		arrayInput= secuenciaInputs;
+		arrayInput = new int[inputsSequence.length] ;
+		arrayInput= inputsSequence;
 	
 	}
 	
@@ -36,9 +35,9 @@ public class ManagerIOMock implements IManagerIO {
 	@Override
 	public int inInt() {
 		
-		if(posicion<arrayInput.length) {
-			int aux= arrayInput[posicion];
-			this.posicion++;
+		if(position<arrayInput.length) {
+			int aux= arrayInput[position];
+			this.position++;
 			return aux;
 		}
 		return 1;
@@ -49,9 +48,9 @@ public class ManagerIOMock implements IManagerIO {
 	@Override
 	public int getRandomInt() {
 		
-		if(posicionRandom<arrayInputRandom.length) {
-			int aux= arrayInputRandom[posicionRandom];
-			this.posicionRandom++;
+		if(positionRandom<arrayInputRandom.length) {
+			int aux= arrayInputRandom[positionRandom];
+			this.positionRandom++;
 			return aux;
 		}
 		return 1;
