@@ -68,7 +68,7 @@ public class Player implements IPlayer {
 	}
 
 	/**
-	 * Allows you to attack the player
+	 * Allows you to attack between player
 	 */
 	public void attack(IPlayer player) {
 
