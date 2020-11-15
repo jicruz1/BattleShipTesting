@@ -99,7 +99,7 @@ public class PlayerTest {
 	 * enemy ships sunk)
 	 */
 	@Test
-	public void testJugadorGana() {
+	public void testPlayerisWinning() {
 
 		new Menu(new ManagerIOMock(Constants.WINNER_PLAYER_SEQUENCE, Constants.WINNER_IA_SEQUENCE));
 		assertTrue(result.toString().contains("Game winner: HumanPlayer!!!"));
