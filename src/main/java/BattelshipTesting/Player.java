@@ -76,12 +76,12 @@ public class Player implements IPlayer {
 			System.out.println("Player => " + this.name + " ATTACK!!!");
 			System.out.println("What position do you want to attack?");
 
-			enemy.atacar(player);
+			enemy.attack(player);
 			enemy.showBoard();
 
 		} else {
 			System.out.println("Machine => " + this.name + " ATTACK RANDOM!");
-			enemy.atacarRandom(player);
+			enemy.attackRandom(player);
 			enemy.showBoard();
 
 		}

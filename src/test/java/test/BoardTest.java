@@ -400,15 +400,15 @@ public class BoardTest {
 		Board testBoard = new Board(new ManagerIOMock(input));
 
 		// 2,1 TOCADO TRUE TRUE
-		testBoard.atacar(testJugador);
+		testBoard.attack(testJugador);
 		// 2,1,2,1 TOCADO TRUE False
-		testBoard.atacar(testJugador);
+		testBoard.attack(testJugador);
 		// 1,2 AGUA FALSE TRUE
-		testBoard.atacar(testJugador);
+		testBoard.attack(testJugador);
 		// 6, 8 FALSE TRUE
-		testBoard.atacar(testJugador);
+		testBoard.attack(testJugador);
 		// 1,2,1,2 FALSE FALSE
-		testBoard.atacar(testJugador);
+		testBoard.attack(testJugador);
 		testBoard.showBoard();
 	}
 
@@ -432,15 +432,15 @@ public class BoardTest {
 		Board testBoard = new Board(new ManagerIOMock(empty, input));
 
 		// 2,1 TOCADO TRUE TRUE
-		testBoard.atacarRandom(testJugador);
+		testBoard.attackRandom(testJugador);
 		// 2,1,2,1 TOCADO TRUE False
-		testBoard.atacarRandom(testJugador);
+		testBoard.attackRandom(testJugador);
 		// 1,2 AGUA FALSE TRUE
-		testBoard.atacarRandom(testJugador);
+		testBoard.attackRandom(testJugador);
 		// 6, 8 FALSE TRUE
-		testBoard.atacarRandom(testJugador);
+		testBoard.attackRandom(testJugador);
 		// 1,2,1,2 FALSE FALSE
-		testBoard.atacarRandom(testJugador);
+		testBoard.attackRandom(testJugador);
 		testBoard.showBoard();
 	}
 

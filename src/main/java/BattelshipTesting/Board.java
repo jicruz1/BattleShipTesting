@@ -371,7 +371,7 @@ public class Board {
 	 * 
 	 * @param randomIA
 	 */
-	public void atacar(IPlayer randomIA) {
+	public void attack(IPlayer randomIA) {
 		Position posicion = new Position();
 		posicion = readPosition();
 		Board aux = randomIA.getOwn();
@@ -392,7 +392,7 @@ public class Board {
 	 * 
 	 * @param player
 	 */
-	public void atacarRandom(IPlayer player) {
+	public void attackRandom(IPlayer player) {
 
 		Position posicion = new Position();
 		posicion = generatePosition();
