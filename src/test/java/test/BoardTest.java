@@ -69,44 +69,115 @@ public class BoardTest {
 		}
 
 	}
-	
-	
+
 	/**
 	 * White box test to verify that the Board is displayed correctly at startup
 	 */
 	/*
+	 * @Test public void testShowBoard() { Board board = new Board(new
+	 * ManagerIOMock()); board.showBoard(); String expected =
+	 * "     _______________________________________\r\n" +
+	 * "    | A | B | C | D | F | G | H | I | J | K |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 1 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 2 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 3 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 4 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 5 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 6 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 7 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 8 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 9 |   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n" +
+	 * "| 10|   |   |   |   |   |   |   |   |   |   |\r\n" +
+	 * "+---+---+---+---+---+---+---+---+---+---+---+\r\n"; assertEquals(expected,
+	 * result.toString());
+	 * 
+	 * }
+	 */
+
+	/**
+	 * White box test to verify that a boat is inserted correctly Black box test of
+	 * the insertBoat method equivalent partitions (-inf, 0), [0, 3], [4, inf)
+	 * border 0, 3 limit:: -1, 1, 3, 4
+	 */
 	@Test
-	public void testShowBoard() {
-		Board board = new Board(new ManagerIOMock());
-		board.showBoard();
-		String expected = "     _______________________________________\r\n"
-				+ "    | A | B | C | D | F | G | H | I | J | K |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 1 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 2 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 3 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 4 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 5 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 6 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 7 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 8 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 9 |   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n"
-				+ "| 10|   |   |   |   |   |   |   |   |   |   |\r\n"
-				+ "+---+---+---+---+---+---+---+---+---+---+---+\r\n";
-		assertEquals(expected, result.toString());
+	public void testInsertBoat() {
 
-	}*/
+		int[] input = new int[] {};
+		Board testBoard = new Board(new ManagerIOMock(input));
 
+		Position pos = new Position(0, 0);
+		pos.setSize(1);
+		pos.setOrientation(0);
+		testBoard.insertBoat(pos);
 
+		pos = new Position(2, 2);
+		pos.setSize(1);
+		pos.setOrientation(1);
+		testBoard.insertBoat(pos);
+
+		pos = new Position(4, 4);
+		pos.setSize(1);
+		pos.setOrientation(2);
+		testBoard.insertBoat(pos);
+
+		pos = new Position(6, 6);
+		pos.setSize(1);
+		pos.setOrientation(3);
+		testBoard.insertBoat(pos);
+
+		// FUERA DEL SWITCH
+
+		pos = new Position(6, 6);
+		pos.setSize(1);
+		pos.setOrientation(4);
+		testBoard.insertBoat(pos);
+
+	}
+
+	/**
+	 * Loop testing White box
+	 */
+	@Test
+	public void testLoopInsertBoat() {
+
+		int[] input = new int[] {};
+		Board testBoard = new Board(new ManagerIOMock(input));
+
+		// Loop with 0 iteractions
+		Position pos = new Position(1, 1);
+		pos.setSize(0);
+		pos.setOrientation(0);
+		testBoard.insertBoat(pos);
+
+		// Loop with 1 iteractions
+		pos = new Position(2, 2);
+		pos.setSize(1);
+		pos.setOrientation(1);
+		testBoard.insertBoat(pos);
+
+		// Loop with 2
+		pos = new Position(4, 4);
+		pos.setSize(2);
+		pos.setOrientation(2);
+		testBoard.insertBoat(pos);
+
+		// Loop with 3 iteractions (m<n) N= 4 boat biggest size
+		pos = new Position(6, 6);
+		pos.setSize(3);
+		pos.setOrientation(2);
+		testBoard.insertBoat(pos);
+
+	}
 
 	/**
 	 * White box test to verify that a Position is inserted correctly
@@ -114,7 +185,7 @@ public class BoardTest {
 	@Test
 	public void testInsertPosition() {
 
-		int[] input = new int[] { 1, 1 };
+		int[] input = new int[] {};
 
 		Board testBoard = new Board(new ManagerIOMock(input));
 		testBoard.insertPosition(1);
@@ -132,7 +203,7 @@ public class BoardTest {
 	@Test
 	public void testInsertPositionKO() {
 
-		//Incorrect and then correct positions
+		// Incorrect and then correct positions
 		int[] input = new int[] { 1, 1, 2, 1 };
 
 		Board testBoard = new Board(new ManagerIOMock(input));
@@ -169,8 +240,6 @@ public class BoardTest {
 		assertEquals(testBoard.getBoard()[1][1], 4);
 	}
 
-
-
 	/**
 	 * White box test to verify that protection is created around the ship Black box
 	 * test of the ship protection method equivalent partitions (-inf, 0), [0, 3],
@@ -179,7 +248,7 @@ public class BoardTest {
 	@Test
 	public void testBoatProtection() {
 
-		int[] input = new int[] { 1, 1 };
+		int[] input = new int[] {};
 		Board testBoard = new Board(new ManagerIOMock(input));
 		Position pos = new Position(2, 2);
 		pos.setSize(1);
@@ -220,52 +289,6 @@ public class BoardTest {
 	}
 
 	/**
-	 * White box test to verify that a boat is inserted correctly Black box test of
-	 * the insertBoat method equivalent partitions (-inf, 0), [0, 3], [4, inf)
-	 * border 0, 3 limit:: -1, 1, 3, 4
-	 */
-	@Test
-	public void testInsertBoat() {
-
-		int[] input = new int[] { 1, 1 };
-		Board testBoard = new Board(new ManagerIOMock(input));
-
-		Position pos = new Position(0, 0);
-		pos.setSize(1);
-		pos.setOrientation(0);
-		testBoard.insertBoat(pos);
-
-		pos = new Position(2, 2);
-		pos.setSize(1);
-		pos.setOrientation(1);
-		testBoard.insertBoat(pos);
-
-		pos = new Position(4, 4);
-		pos.setSize(1);
-		pos.setOrientation(2);
-		testBoard.insertBoat(pos);
-
-		pos = new Position(6, 6);
-		pos.setSize(1);
-		pos.setOrientation(3);
-		testBoard.insertBoat(pos);
-
-		// FUERA DEL SWITCH
-
-		pos = new Position(6, 6);
-		pos.setSize(1);
-		pos.setOrientation(4);
-		testBoard.insertBoat(pos);
-
-	}
-
-	/*
-	 * Test de caja blanca para verificar que se inserta una orientacio
-	 * correctamente *Test de caja negra del metodo isValidOrientation particiones
-	 * equivalentes (-inf, 0), [0, 3], [4, inf) frontera 0, 3 limites: -1, 1, 3, 4
-	 */
-
-	/**
 	 * White box test to verify that an orientation is inserted correctly * Black
 	 * box test of the isValidOrientation method equivalent partitions (-inf, 0),
 	 * [0, 3], [4, inf) frontera 0, 3 limites: -1, 1, 3, 4
@@ -273,7 +296,7 @@ public class BoardTest {
 	@Test
 	public void testIsValidOrientation() {
 
-		int[] input = new int[] { 1, 1 };
+		int[] input = new int[] {};
 		Board testBoard = new Board(new ManagerIOMock(input));
 
 		// FUERA DE RANGO

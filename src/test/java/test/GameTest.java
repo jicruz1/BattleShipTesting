@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import BattelshipTesting.Game;
 import mock.ManagerIOMock;
+import utils.Constants;
 
 /**
  * This test class takes care of the unit tests of the Game class
@@ -45,4 +46,5 @@ public class GameTest {
 		assertTrue(resultado.toString().contains("------Main Menu------"));
 
 	}
+
 }
