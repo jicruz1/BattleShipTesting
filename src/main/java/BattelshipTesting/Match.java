@@ -64,5 +64,8 @@ public class Match {
 			System.out.println("Game winner: " + this.randomIA.getName() + "!!!");
 		}
 	}
-
+	public Match() {}
+	public void setUser(Player u) {this.user = u;}
+	public void setRandomIA(Player rIA) {this.randomIA = rIA;}
+	public boolean getEndGame() {return this.endGame;};
 }
