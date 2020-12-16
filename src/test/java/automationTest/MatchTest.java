@@ -2,14 +2,15 @@ package automationTest;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import BattelshipTesting.ManagerIO;
-import BattelshipTesting.Match;
-import BattelshipTesting.Player;
 import interfaces.IManagerIO;
-import mock.ManagerIOMock;
+import mock.MatchMock;
 
 public class MatchTest {
 
@@ -19,15 +20,18 @@ public class MatchTest {
 
 	@Test
 	public void test() {
+		
+		PrintStream systemOutOriginal = System.out;
+		ByteArrayOutputStream result = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(result));
+		
 		IManagerIO managerIO = new ManagerIO();
 		
-		Match m = new Match();
-		Player customPlayer = new Player("playerIA", managerIO);
-		Player customIA = new Player("customIA", managerIO);
-		m.setUser(customPlayer);
-		m.setRandomIA(customIA);
-		m.startMatch();
-		assertTrue(m.getEndGame());
+		MatchMock m = new MatchMock(managerIO);
+		
+		assertTrue(result.toString().contains("Game winner: "));
+		
+		System.setOut(systemOutOriginal);
 	}
 
 }
