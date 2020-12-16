@@ -16,7 +16,7 @@ public class Match {
 	protected Player randomIA;
 	protected Player user;
 
-	boolean endGame = false;
+	protected boolean endGame = false;
 	boolean playerTurn = true;
 
 	/**
