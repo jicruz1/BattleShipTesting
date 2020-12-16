@@ -13,10 +13,10 @@ import utils.Constants;
  */
 public class Player implements IPlayer {
 
-	String name;
-	Board own;
-	Board enemy;
-	int type;
+	protected String name;
+	protected Board own;
+	protected Board enemy;
+	protected int type;
 
 	/**
 	 * Player default constructor

@@ -13,8 +13,8 @@ public class Match {
 
 	IManagerIO managerIO;
 
-	Player randomIA;
-	Player user;
+	protected Player randomIA;
+	protected Player user;
 
 	boolean endGame = false;
 	boolean playerTurn = true;
@@ -30,6 +30,7 @@ public class Match {
 		this.randomIA = new Player(Constants.RANDOM_PLAYER_IA, managerIO);
 		this.startMatch();
 	}
+	
 
 	/**
 	 * Main match/game loop
@@ -64,8 +65,7 @@ public class Match {
 			System.out.println("Game winner: " + this.randomIA.getName() + "!!!");
 		}
 	}
+	
 	public Match() {}
-	public void setUser(Player u) {this.user = u;}
-	public void setRandomIA(Player rIA) {this.randomIA = rIA;}
-	public boolean getEndGame() {return this.endGame;};
+	
 }
